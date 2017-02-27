@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 
 import Card from './card';
 
 describe('<Card />', () => {
     it('Renders without crashing', () => {
-        mount(<Card text="Foo" />);
+        shallow(<Card text="Foo" />);
     });
 
     it('Renders the text', () => {

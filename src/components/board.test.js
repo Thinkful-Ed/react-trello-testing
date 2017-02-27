@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 
 import Board from './board';
 
@@ -13,7 +13,7 @@ describe('<Board/>', () => {
     });
 
     it('Renders without crashing', () => {
-        mount(<Board title="Foo" />);
+        shallow(<Board title="Foo" />);
     });
 
     it('Renders the title', () => {

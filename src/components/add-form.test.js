@@ -6,7 +6,7 @@ import AddForm from './add-form';
 
 describe('<AddForm />', () => {
     it('Renders without crashing', () => {
-        mount(<AddForm />);
+        shallow(<AddForm />);
     });
 
     it('Renders the add button initially', () => {
