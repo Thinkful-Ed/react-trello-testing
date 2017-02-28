@@ -32,7 +32,7 @@ describe('<AddForm />', () => {
         wrapper.instance().setEditing(true);
         wrapper.find('input[type="text"]').node.value = value;
         wrapper.simulate('submit');
-        expect(callback).toHaveBeenCalled();
+        expect(callback).toHaveBeenCalledWith(value);
     });
 
     it('Should not fire onAdd if the input is empty', () => {
