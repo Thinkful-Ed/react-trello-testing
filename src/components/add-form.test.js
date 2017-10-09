@@ -16,6 +16,7 @@ describe('<AddForm />', () => {
     it('Should render the add form when editing', () => {
         const wrapper = shallow(<AddForm />);
         wrapper.instance().setEditing(true);
+        wrapper.update();
         expect(wrapper.hasClass('add-form')).toEqual(true);
     });
 
@@ -30,7 +31,8 @@ describe('<AddForm />', () => {
         const wrapper = mount(<AddForm onAdd={callback} />);
         const value = 'Foobar';
         wrapper.instance().setEditing(true);
-        wrapper.find('input[type="text"]').node.value = value;
+        wrapper.update();
+        wrapper.find('input[type="text"]').instance().value = value;
         wrapper.simulate('submit');
         expect(callback).toHaveBeenCalledWith(value);
     });
@@ -43,5 +45,3 @@ describe('<AddForm />', () => {
         expect(callback).not.toHaveBeenCalled();
     });
 });
-
-

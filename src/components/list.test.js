@@ -6,8 +6,8 @@ import List from './list';
 describe('<List />', () => {
     const seedCards = [];
     beforeAll(() => {
-        for (let i=0; i<10; i++) {
-            seedCards.push(`Card ${i}`)
+        for (let i = 0; i < 10; i++) {
+            seedCards.push(`Card ${i}`);
         }
     });
 
@@ -16,11 +16,10 @@ describe('<List />', () => {
     });
 
     it('Renders the title', () => {
-        const title = "Foo";
+        const title = 'Foo';
         const wrapper = shallow(<List title={title} />);
         expect(wrapper.contains(<h3>{title}</h3>)).toEqual(true);
     });
-
 
     it('Can add cards to the state', () => {
         const wrapper = shallow(<List />);
@@ -33,11 +32,10 @@ describe('<List />', () => {
         const wrapper = shallow(<List />);
         const instance = wrapper.instance();
         seedCards.forEach(instance.addCard);
+        wrapper.update();
         const cards = wrapper.find('Card');
         expect(cards.length).toEqual(seedCards.length);
         const firstCard = cards.first();
         expect(firstCard.prop('text')).toEqual(seedCards[0]);
     });
 });
-
-
