@@ -1,10 +1,10 @@
 .add-button {
     padding: 8px;
     border-radius: 4px;
-}
-
-.add-button a {
-    text-decoration: none;
+    text-align: left;
+    border: 0;
+    font: inherit;
+    width: 100%;
 }
 
 .lists > .add-button {
@@ -16,15 +16,16 @@
     background: #0D47A1;
 }
 
-.lists > .add-button a {
+.lists > .add-button {
     color: white;
+    width: auto;
 }
 
 .list > .add-button:hover {
     background: #BDBDBD;
 }
 
-.list > .add-button a {
+.list > .add-button {
     color: black;
 }
 
