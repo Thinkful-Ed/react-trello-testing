@@ -21,22 +21,22 @@ export default class Board extends React.Component {
             lists: [...this.state.lists, {title}]
         });
     }
-    
+
     render() {
-        const lists = this.state.lists.map((list, index) =>
-        <li className="list-wrapper" key={index}>
-            <List {...list}/>
-        </li>
-        );
+        const lists = this.state.lists.map((list, index) => (
+            <li className="list-wrapper" key={index}>
+                <List {...list} />
+            </li>
+        ));
 
         return (
             <div className="board">
                 <h2>{this.props.title}</h2>
                 <ul className="lists">
-                        {lists}
-                        <li>
+                    {lists}
+                    <li className="add-list-wrapper">
                         <AddForm
-                            type="card"
+                            type="list"
                             onAdd={text => this.addList(text)}
                         />
                     </li>
@@ -49,4 +49,3 @@ export default class Board extends React.Component {
 Board.defaultProps = {
     title: 'Board'
 };
-
